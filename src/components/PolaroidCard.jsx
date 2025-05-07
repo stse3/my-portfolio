@@ -1,4 +1,4 @@
-import PolaroidFrame from '../assets/polaroid.png';
+
 
 export default function PolaroidCard({ image, title, company, date, tools }) {
   return (
