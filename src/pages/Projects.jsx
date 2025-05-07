@@ -31,7 +31,7 @@ export default function Projects() {
     />
 </h1>
         
-        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-10">
           A collection of my recent engineering projects, showcasing my skills in full-stack development,
           cloud architecture, and data visualization.
         </p>
