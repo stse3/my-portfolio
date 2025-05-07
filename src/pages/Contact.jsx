@@ -46,13 +46,13 @@ export default function Contact() {
             <a 
               key={link.id}
               href={link.href}
-              className="text-gray-800 hover:text-rose-400 transition-all duration-300 relative"
+              className="text-gray-800 hover:text-rose-400 transition-all duration-300 relative hover:scale-110"
               onMouseEnter={() => setHovered(link.id)}
               onMouseLeave={() => setHovered(null)}
             >
               {link.icon}
               {hovered === link.id && (
-                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm opacity-80">
+                <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs opacity-80">
                   {link.label}
                 </span>
               )}
