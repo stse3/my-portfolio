@@ -9,19 +9,19 @@ export default function Contact() {
     { 
       id: 'linkedin', 
       icon: <Linkedin size={28} />, 
-      href: 'https://linkedin.com/in/yourprofile',
+      href: 'https://linkedin.com/in/tse-sherry',
       label: 'LinkedIn'
     },
     { 
       id: 'github', 
       icon: <Github size={28} />, 
-      href: 'https://github.com/yourusername',
+      href: 'https://github.com/stse3',
       label: 'GitHub'
     },
     { 
       id: 'email', 
       icon: <Mail size={28} />, 
-      href: 'mailto:sherry.tse@mail.com',
+      href: 'mailto:s27tse@uwaterloo.ca',
       label: 'Email' 
     }
   ];

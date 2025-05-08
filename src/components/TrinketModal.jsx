@@ -73,7 +73,11 @@ export default function TrinketModal({ trinket, onClose}) {
           initial="hidden"
           animate="visible"
           exit="exit"
+          
         >
+            <div className="text-gray-800 text-center mt-4">
+            <p className="font-serif font-semibold text-md mt-40 ml-20 w-48 text-left">{trinket.description}</p>
+            </div>
           <motion.button
             className="absolute top-1 right-1 rounded-full flex items-center justify-center text-gray-800 font-bold text-xl hover:scale-125 "
             onClick={onClose}

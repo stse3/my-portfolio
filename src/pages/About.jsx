@@ -28,49 +28,49 @@ export default function About() {
     {
       id: 1,
       image: Coffee, // Top left
-      description: "Coffee enthusiast, can't start my day without it.",
+      description: "i'm a huge café enthusiast--i could spend hours visiting different cafes around the city, chatting with friends, and exploring new communities <3",
       position: { x: "30%", y: "20%" }
     },
     {
       id: 2,
       image: Bao, // Top center
-      description: "I enjoy exploring different cuisines and foods.",
+      description: "my cantonese heritage is of huge importance to me, visiting relatives in hong kong, dim sum meals with friends and relatives over steamed baos",
       position: { x: "50%", y: "20%" }
     },
     {
       id: 3,
       image: Camera, // Top right
-      description: 'Photography helps me capture moments and memories.',
+      description: "i am a huge fan of photography, especially of buildings, new cities in my travels.",
       position: { x: "70%", y: "18%" }
     },
     {
       id: 4,
       image: PaperBag, // Middle left
-      description: "Sustainability matters to me in everyday choices.",
+      description: "surprise! fun fact: i am a middle child <3",
       position: { x: "20%", y: "45%" }
     },
     {
       id: 5,
       image: Airpods, // Middle right
-      description: "Music is my love. I've been playing piano since I was 5.",
+      description: "i've been playing piano since i was 5, and i love to use it as a way to express my emotions, or take a step back.",
       position: { x: "77%", y: "48%" }
     },
     {
       id: 6,
       image: Files, // Bottom left
-      description: "I'm organized and detail-oriented in my work.",
+      description: "if you made it here! check out some of my projects i've poured my love into <3",
       position: { x: "20%", y: "70%" }
     },
     {
       id: 7,
       image: Bag, // Bottom center-left
-      description: 'I love to travel and explore new places.',
+      description: 'i carry all of my valuables in my tote bag.',
       position: { x: "40%", y: "75%" }
     },
     {
       id: 8,
       image: Paintbrushes, // Bottom center-right
-      description: "Art and creativity are important parts of my life.",
+      description: "art's and crafts and creativity is my love, i still find ways to incorporate and bridge the intersection in tech!",
       position: { x: "60%", y: "75%" }
     },
     {
