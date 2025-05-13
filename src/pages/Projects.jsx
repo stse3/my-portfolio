@@ -58,7 +58,8 @@ export default function Projects() {
       company: "Personal Project",
       date: "May 2025 - Present",
       description: "In today's work culture and tech enviornment, I was inspired to create a fullstack AI platform that could ",
-      mediaType: "image",
+      mediaType: "youtube",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/hz5ZMezncWE",
       tools: [
         "React", 
         "Tailwind", 
