@@ -57,7 +57,7 @@ export default function Projects() {
       title: "WanderTO AI",
       company: "Personal Project",
       date: "May 2025 - Present",
-      description: "In today's work culture and tech enviornment, I was inspired to create a fullstack AI platform that could ",
+      description: "WanderTO AI is a fullstack event discovery platform that addresses the overwhelming number of daily events in Toronto—over 200+. It uses Puppeteer to dynamically scrape popular event websites, then classifies and filters content using NLP models, including Facebook's BART-MNLI for event categorization. Users can explore curated events, share listings, invite friends, and foster community engagement—all through a clean, responsive interface.",
       mediaType: "youtube",
       youtubeEmbedUrl: "https://www.youtube.com/embed/hz5ZMezncWE",
       tools: [
