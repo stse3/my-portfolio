@@ -52,7 +52,7 @@ export default function Projects() {
       githubUrl: "https://github.com/stse3/cafe-compass",
     },
     {
-      id: 4,
+      id: 3,
       image: wanderTO,
       title: "WanderTO AI",
       company: "Personal Project",
@@ -73,25 +73,21 @@ export default function Projects() {
     },
     {
       id: 4,
-      image: wanderTO,
-      title: "WanderTO AI",
+      image: portfolio,
+      title: "Personal Portfolio",
       company: "Personal Project",
-      date: "May 2025 - Present",
-      description: "WanderTO AI is a fullstack event discovery platform that addresses the overwhelming number of daily events in Toronto—over 200+. It uses Puppeteer to dynamically scrape popular event websites, then classifies and filters content using NLP models, including Facebook's BART-MNLI for event categorization. Users can explore curated events, share listings, invite friends, and foster community engagement—all through a clean, responsive interface.",
-      mediaType: "youtube",
-      youtubeEmbedUrl: "https://www.youtube.com/embed/hz5ZMezncWE",
+      date: "2025",
+      description: "A modern, responsive portfolio website built to showcase my projects and skills as a developer. The site features interactive elements, smooth animations, and optimized performance. It includes project showcases, skill visualizations, and a contact system. The design emphasizes clean typography and intuitive navigation to create an engaging user experience.",
+      mediaType: "image",
       tools: [
         "React", 
         "Tailwind", 
         "HTML/CSS/JS",
-        "Framer-Motion",
-        "Hugging Face",
-        "NLP",
-        "Python",
-        "Pytorch"
+        "Framer-Motion"
       ],
-      githubUrl: "https://github.com/stse3/wanderTO-ai"
-    },    
+      githubUrl: "https://github.com/stse3/my-portfolio",
+      liveUrl: "https://sherrytse.com"
+    }
   ];
 
   // Open modal with project details
