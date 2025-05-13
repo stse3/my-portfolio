@@ -5,6 +5,7 @@ import FrontopMockup from '../assets/frontop.png';
 import cafe from '../assets/cafe-compass.png';
 import portfolio from '../assets/portfolio.png';
 import Typewriter from 'typewriter-effect';
+import wanderTO  from '../assets/WanderTO - AI.png';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -51,22 +52,46 @@ export default function Projects() {
       githubUrl: "https://github.com/stse3/cafe-compass",
     },
     {
-      id: 3,
-      image: portfolio,
-      title: "Personal Portfolio",
+      id: 4,
+      image: wanderTO,
+      title: "WanderTO AI",
       company: "Personal Project",
-      date: "2025",
-      description: "A modern, responsive portfolio website built to showcase my projects and skills as a developer. The site features interactive elements, smooth animations, and optimized performance. It includes project showcases, skill visualizations, and a contact system. The design emphasizes clean typography and intuitive navigation to create an engaging user experience.",
+      date: "May 2025 - Present",
+      description: "In today's work culture and tech enviornment, I was inspired to create a fullstack AI platform that could ",
       mediaType: "image",
       tools: [
         "React", 
         "Tailwind", 
         "HTML/CSS/JS",
-        "Framer-Motion"
+        "Framer-Motion",
+        "Hugging Face",
+        "NLP",
+        "Python",
+        "Pytorch"
       ],
-      githubUrl: "https://github.com/stse3/my-portfolio",
-      liveUrl: "https://sherrytse.com"
-    }
+      githubUrl: "https://github.com/stse3/wanderTO-ai",
+    },
+    {
+      id: 4,
+      image: wanderTO,
+      title: "WanderTO AI",
+      company: "Personal Project",
+      date: "May 2025 - Present",
+      description: "WanderTO AI is a fullstack event discovery platform that addresses the overwhelming number of daily events in Toronto—over 200+. It uses Puppeteer to dynamically scrape popular event websites, then classifies and filters content using NLP models, including Facebook's BART-MNLI for event categorization. Users can explore curated events, share listings, invite friends, and foster community engagement—all through a clean, responsive interface.",
+      mediaType: "youtube",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/hz5ZMezncWE",
+      tools: [
+        "React", 
+        "Tailwind", 
+        "HTML/CSS/JS",
+        "Framer-Motion",
+        "Hugging Face",
+        "NLP",
+        "Python",
+        "Pytorch"
+      ],
+      githubUrl: "https://github.com/stse3/wanderTO-ai"
+    },    
   ];
 
   // Open modal with project details
