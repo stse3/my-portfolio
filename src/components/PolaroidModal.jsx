@@ -67,7 +67,7 @@ export default function PolaroidModal({
         </div>
         
         {/* Modal Content */}
-        <div className="overflow-y-auto max-h-[calc(90vh-10rem)]">
+        <div className="overflow-y-auto max-h-[calc(90vh-10rem)] bg-white">
           {/* Media Container */}
           <div className="relative w-full h-96">
             {mediaType === "youtube" && youtubeEmbedUrl ? (

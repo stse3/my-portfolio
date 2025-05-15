@@ -78,7 +78,7 @@ export default function Projects() {
       title: "Personal Portfolio",
       company: "Personal Project",
       date: "2025",
-      description: "A modern, responsive portfolio website built to showcase my projects and skills as a developer. The site features interactive elements, smooth animations, and optimized performance. It includes project showcases, skill visualizations, and a contact system. The design emphasizes clean typography and intuitive navigation to create an engaging user experience.",
+      description: "This is my personal portfolio to showcase my projects and skills as a developer! I was inspired by zines, magazines, and trinkets to introduce who I am, and get to know everyone! Fun fact: I modelled the room in my intro with Blender 3D Software!  It includes project showcases, skill visualizations, and a contact system.",
       mediaType: "image",
       tools: [
         "React", 

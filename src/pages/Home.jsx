@@ -52,7 +52,7 @@ export default function Home() {
                 <Emoji name="laptop" width={20} className="inline" />
               </p>
               <p>
-                i’m passionate about creating human-centered solutions, blending technology and creativity{" "}
+              I'm passionate about using technology to build community and create human-centered designs that blend technical innovation with creativity
                 <Emoji name="love letter" width={20} className="inline" />
               </p>
               <div className="flex flex-row gap-1">
