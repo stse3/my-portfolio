@@ -58,13 +58,13 @@ export default function About() {
     {
       id: 6,
       image: Files, // Bottom left
-      description: "i'm currently a first year systems design enginereing student at the university of waterloo!",
+      description: "i'm currently a 1B systems design engineering student at the university of waterloo!",
       position: { x: "20%", y: "70%" }
     },
     {
       id: 7,
       image: Bag, // Bottom center-left
-      description: '',
+      description: "some places i've worked at include sunlife, UW reality labs and frontop engineering! ",
       position: { x: "40%", y: "75%" }
     },
     {
