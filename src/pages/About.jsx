@@ -28,55 +28,55 @@ export default function About() {
     {
       id: 1,
       image: Coffee, // Top left
-      description: "i'm a huge café enthusiast--i could spend hours visiting different cafes around the city, chatting with friends, and exploring new communities <3",
+      description: "i'm super into visiting cafes all around town!",
       position: { x: "30%", y: "20%" }
     },
     {
       id: 2,
       image: Bao, // Top center
-      description: "my cantonese heritage is of huge importance to me, visiting relatives in hong kong, dim sum meals with friends and relatives over steamed baos",
+      description: "you can find me eating dim sum with my family on sundays! ",
       position: { x: "50%", y: "20%" }
     },
     {
       id: 3,
       image: Camera, // Top right
-      description: "i am a huge fan of photography, especially of buildings, new cities in my travels.",
+      description: "i'm a huge fan of photography and i'll be snapping tons of photos on vacations <3",
       position: { x: "70%", y: "18%" }
     },
     {
       id: 4,
       image: PaperBag, // Middle left
-      description: "surprise! fun fact: i am a middle child <3",
+      description: "if you've made it here, check out some of my projects in my portfolio showcase!",
       position: { x: "20%", y: "45%" }
     },
     {
       id: 5,
       image: Airpods, // Middle right
-      description: "i've been playing piano since i was 5, and i love to use it as a way to express my emotions, or take a step back.",
+      description: "some of my current favourite artists include frank ocean, boy pablo and matt maltese! ",
       position: { x: "77%", y: "48%" }
     },
     {
       id: 6,
       image: Files, // Bottom left
-      description: "if you made it here! check out some of my projects i've poured my love into <3",
+      description: "i'm currently a first year systems design enginereing student at the university of waterloo!",
       position: { x: "20%", y: "70%" }
     },
     {
       id: 7,
       image: Bag, // Bottom center-left
-      description: 'i carry all of my valuables in my tote bag.',
+      description: '',
       position: { x: "40%", y: "75%" }
     },
     {
       id: 8,
       image: Paintbrushes, // Bottom center-right
-      description: "art's and crafts and creativity is my love, i still find ways to incorporate and bridge the intersection in tech!",
+      description: "i'm always looking for ways to blend creativity, art and design with tech!",
       position: { x: "60%", y: "75%" }
     },
     {
       id: 9,
       image: TV, // Bottom right
-      description: "I am a movie fanatic.",
+      description: "some of my current favourite movies are pride and prejudice and into the spiderverse!",
       position: { x: "77%", y: "75%" }
     }
   ];
