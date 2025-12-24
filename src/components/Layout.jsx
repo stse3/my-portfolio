@@ -10,23 +10,24 @@ export default function Layout() {
   const pageVariants = {
     initial: {
       opacity: 0,
-      x: 100,
+      y: 20,
     },
     animate: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
         type: 'spring',
-        stiffness: 260,
+        stiffness: 100,
         damping: 20,
-        duration: 0.3,
+        duration: 0.4,
       }
     },
     exit: {
       opacity: 0,
-      x: -100,
+      y: -20,
       transition: {
-        duration: 0.2
+        duration: 0.3,
+        ease: "easeInOut"
       }
     }
   };

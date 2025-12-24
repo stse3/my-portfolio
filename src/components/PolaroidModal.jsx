@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { X, Github } from 'lucide-react';
 
 export default function PolaroidModal({
@@ -15,18 +16,11 @@ export default function PolaroidModal({
   githubUrl,
   liveUrl
 }) {
-  const [isVisible, setIsVisible] = useState(false);
-  
   useEffect(() => {
     if (isOpen) {
-      setIsVisible(true);
       // Prevent body scrolling when modal is open
       document.body.style.overflow = 'hidden';
     } else {
-      // Add animation before closing
-      setTimeout(() => {
-        setIsVisible(false);
-      }, 300);
       document.body.style.overflow = 'auto';
     }
     
@@ -35,8 +29,6 @@ export default function PolaroidModal({
     };
   }, [isOpen]);
   
-  if (!isOpen && !isVisible) return null;
-  
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) {
       onClose();
@@ -44,17 +36,23 @@ export default function PolaroidModal({
   };
 
   return (
-    <div 
-      className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70 transition-opacity duration-300 ${
-        isOpen ? 'opacity-100' : 'opacity-0'
-      }`}
-      onClick={handleBackdropClick}
-    >
-      <div 
-        className={`bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh] transition-all duration-300 ${
-          isOpen ? 'scale-100' : 'scale-95'
-        }`}
-      >
+    <AnimatePresence mode="wait">
+      {isOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70"
+          onClick={handleBackdropClick}
+        >
+          <motion.div
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="bg-white rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl max-h-[90vh]"
+          >
         {/* Modal Header */}
         <div className="flex justify-between items-center p-6 border-b">
           <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
@@ -132,8 +130,10 @@ export default function PolaroidModal({
             {/* Description */}
             <div className="mb-8">
               <h4 className="text-lg font-medium text-gray-800 mb-3">Description</h4>
-              <div className="text-gray-600 leading-relaxed">
-                {description}
+              <div className="text-gray-600 leading-relaxed space-y-4">
+                {description.split('\n\n').map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
               </div>
             </div>
             
@@ -155,7 +155,9 @@ export default function PolaroidModal({
             )}
           </div>
         </div>
-      </div>
-    </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

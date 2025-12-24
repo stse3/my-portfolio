@@ -5,3 +5,35 @@
 body {
   @apply font-sans text-black;
 }
+
+/* Performance optimizations for smoother transitions */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Optimize transitions and animations */
+.transition-transform,
+.transition-all,
+.transition-opacity,
+.transition-shadow {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Prevent layout shifts during typewriter animations */
+.Typewriter__cursor {
+  transition: opacity 0.3s ease;
+}
+
+/* Optimize hover states */
+img,
+.hover\\:scale-105:hover {
+  transform-origin: center;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

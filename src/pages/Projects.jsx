@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 import PolaroidCard from '../components/PolaroidCard';
 import PolaroidModal from '../components/PolaroidModal';
 import FrontopMockup from '../assets/frontop.png';
@@ -9,16 +10,38 @@ import wanderTO  from '../assets/WanderTO - AI.png';
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const typewriterRef = useRef(null);
 
   // Project data with descriptions, GitHub links, and YouTube video
   const projects = [
+    
     {
       id: 1,
+      image: cafe,
+      title: "Cafe-Compass: Redefining the cafe experience",
+      company: "Personal Project",
+      date: "2025",
+      description: "As someone who loves exploring cafes around the city, I found it challenging during remote work to understand the vibe of each café beforehand. Would it be suitable for taking meetings? \n\nWhat was the seating and ambience like? Was it more for casual coffee chats, or did they have a no-laptop policy?\n\nTo solve this problem, I created Cafe Compass—a fullstack web application that curates café information specifically for remote workers and café enthusiasts. By analyzing over 1,000+ Google reviews for cafés throughout the city, it provides AI-powered insights to help users discover the best cafés for different work styles and atmospheres, making it easier to find the perfect spot to work or relax.",
+      mediaType: "youtube",
+      youtubeEmbedUrl: "https://www.youtube.com/embed/Diw3ZlkDXSw",
+      tools: [
+        "Google APIs", 
+        "PostgreSQL Supabase", 
+        "React", 
+        "Tailwind", 
+        "Node.js", 
+        "HTML/CSS/JS", 
+        "Figma"
+      ],
+      githubUrl: "https://github.com/stse3/cafeCompass",
+    },
+    {
+      id: 2,
       image: FrontopMockup,
       title: "Real Time Seismic Vibration Data Web App",
       company: "Frontop Engineering Ltd",
       date: "Jan - April 2025",
-      description: "Developed a real-time monitoring system for seismic vibration data, enabling engineers to visualize and analyze ground movement patterns instantly. The application integrates with sensor networks deployed across multiple locations, processes incoming data streams, and presents critical information through an intuitive dashboard interface with customizable alerts and historical data comparison features.",
+      description: "Developed a comprehensive real-time monitoring system for seismic vibration data, enabling engineers to visualize and analyze ground movement patterns instantly.\n\nThe application integrates seamlessly with sensor networks deployed across multiple locations, processes incoming data streams in real-time, and presents critical information through an intuitive dashboard interface. Key features include customizable alerts, historical data comparison, and advanced visualization tools for comprehensive seismic analysis.",
       mediaType: "youtube",
       youtubeEmbedUrl: "https://www.youtube.com/embed/0LRET50OuQs",
       tools: [
@@ -33,31 +56,12 @@ export default function Projects() {
       ],
     },
     {
-      id: 2,
-      image: cafe,
-      title: "Cafe-Compass: Redefining the cafe experience",
-      company: "Personal Project",
-      date: "2025",
-      description: "Cafe-Compass is an innovative platform designed to enhance the cafe-finding experience. It uses location-based services to help users discover nearby cafes based on preferences like ambiance, specialty coffee options, and workspace availability. The app features real-time occupancy data, menu browsing, and a community review system that focuses on specific attributes coffee enthusiasts care about most.",
-      mediaType: "image",
-      tools: [
-        "Google APIs", 
-        "Postgresql", 
-        "React", 
-        "Tailwind", 
-        "Node.js", 
-        "HTML/CSS/JS", 
-        "Figma"
-      ],
-      githubUrl: "https://github.com/stse3/cafe-compass",
-    },
-    {
       id: 3,
       image: wanderTO,
       title: "WanderTO AI",
       company: "Personal Project",
       date: "May 2025 - Present",
-      description: "WanderTO AI is a fullstack event discovery platform that addresses the overwhelming number of daily events in Toronto—over 200+. It uses Puppeteer to dynamically scrape popular event websites, then classifies and filters content using NLP models, including Facebook's BART-MNLI for event categorization. Users can explore curated events, share listings, invite friends, and foster community engagement—all through a clean, responsive interface.",
+      description: "WanderTO AI is a comprehensive event discovery platform that tackles the overwhelming challenge of Toronto's 200+ daily events.\n\nThe platform uses Puppeteer to dynamically scrape popular event websites, then leverages advanced NLP models—including Facebook's BART-MNLI—for intelligent event categorization and filtering. Users can explore curated events, share listings, invite friends, and foster community engagement through a clean, responsive interface designed for seamless event discovery.",
       mediaType: "youtube",
       youtubeEmbedUrl: "https://www.youtube.com/embed/hz5ZMezncWE",
       tools: [
@@ -78,7 +82,7 @@ export default function Projects() {
       title: "Personal Portfolio",
       company: "Personal Project",
       date: "2025",
-      description: "This is my personal portfolio to showcase my projects and skills as a developer! I was inspired by zines, magazines, and trinkets to introduce who I am, and get to know everyone! Fun fact: I modelled the room in my intro with Blender 3D Software!  It includes project showcases, skill visualizations, and a contact system.",
+      description: "This is my personal portfolio designed to showcase my projects and skills as a developer! I drew inspiration from zines, magazines, and collectible trinkets to create a unique way to introduce myself and connect with visitors.\n\nFun fact: I modeled the room in my intro using Blender 3D software! The portfolio features interactive project showcases, skill visualizations, and an integrated contact system for seamless communication.",
       mediaType: "image",
       tools: [
         "React", 
@@ -112,13 +116,14 @@ export default function Projects() {
               typewriter
                 .typeString("Portfolio")
                 .callFunction(() => {
-                  // Wait a bit after typing to remove the cursor
-                  setTimeout(() => {
+                  // Use ref-based approach for cursor removal
+                  requestAnimationFrame(() => {
                     const cursor = document.querySelector('.Typewriter__cursor');
                     if (cursor) {
-                      cursor.style.opacity = '0'; // Or: cursor.remove();
+                      cursor.style.transition = 'opacity 0.3s ease';
+                      cursor.style.opacity = '0';
                     }
-                  }, 500); // Delay to ensure typing animation finishes
+                  });
                 })
                 .start();
             }}
@@ -138,11 +143,15 @@ export default function Projects() {
       
       {/* Projects Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
-        {projects.map((project) => (
-          <div 
-            key={project.id} 
+        {projects.map((project, index) => (
+          <motion.div 
+            key={project.id}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            whileHover={{ y: -8, transition: { duration: 0.2 } }}
             onClick={() => openModal(project)} 
-            className="cursor-pointer transition-transform duration-300 hover:-translate-y-2"
+            className="cursor-pointer"
           >
             <PolaroidCard
               image={project.image}
@@ -151,7 +160,7 @@ export default function Projects() {
               date={project.date}
               tools={project.tools}
             />
-          </div>
+          </motion.div>
         ))}
       </div>
       

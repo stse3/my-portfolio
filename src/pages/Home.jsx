@@ -20,13 +20,14 @@ export default function Home() {
         typewriter
         .typeString("Hi, I'm Sherry Tse.")
         .callFunction(() => {
-            // Wait a bit after typing to remove the cursor
-            setTimeout(() => {
+            // Use requestAnimationFrame for smoother cursor removal
+            requestAnimationFrame(() => {
             const cursor = document.querySelector('.Typewriter__cursor');
             if (cursor) {
-                cursor.style.opacity = '0'; // Or: cursor.remove();
+                cursor.style.transition = 'opacity 0.3s ease';
+                cursor.style.opacity = '0';
             }
-            }, 500); // Delay to ensure typing animation finishes
+            });
         })
         .start();
     }}
