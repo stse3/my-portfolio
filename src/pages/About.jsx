@@ -17,7 +17,6 @@ import {
 
 export default function About() {
   const [selectedTrinket, setSelectedTrinket] = useState(null);
-  const [hoveredTrinket, setHoveredTrinket] = useState(null);
   const [page, setPage] = useState('intro');//options: intro, bag_play
   const containerRef = useRef(null);
   
@@ -97,7 +96,7 @@ export default function About() {
         className="relative h-[500px] w-[90%] mx-auto"
       >
         {/* Central Text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center hover:scale-125 transition-all duration-500">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
           <h2 className="text-3xl font-serif">What's in</h2>
           <h2 className="text-3xl font-serif">my bag?</h2>
         </div>
@@ -106,7 +105,7 @@ export default function About() {
         {trinkets.map((trinket) => (
           <div
             key={trinket.id}
-            className="absolute transition-all duration-800 hover:scale-125 cursor-pointer"
+            className="absolute cursor-pointer"
             style={{
               // Position based on the predefined coordinates using percentage
               left: trinket.position.x,
@@ -116,25 +115,11 @@ export default function About() {
               transform: 'translate(-50%, -50%)' // Center the element on its position
             }}
             onClick={() => openModal(trinket)}
-            onMouseEnter={() => setHoveredTrinket(trinket)}
-            onMouseLeave={() => setHoveredTrinket(null)}
           >
             <Trinket
               image={trinket.image}
               description={trinket.description}
             />
-            
-            {/* Hover Tooltip */}
-            {hoveredTrinket && hoveredTrinket.id === trinket.id && (
-              <div className="absolute z-10 bg-white border border-gray-300 rounded-lg shadow-lg p-3 max-w-xs min-w-48 text-sm text-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full -mt-2 left-1/2 top-0">
-                <div className="font-medium mb-1 text-center">Preview:</div>
-                <div className="text-xs text-center leading-relaxed">
-                  {trinket.description}
-                </div>
-                {/* Small arrow pointing down */}
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-300"></div>
-              </div>
-            )}
           </div>
         ))}
       </div>
