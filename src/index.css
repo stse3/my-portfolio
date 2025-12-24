@@ -37,3 +37,21 @@ img,
 html {
   scroll-behavior: smooth;
 }
+
+/* Image loading optimizations */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  will-change: auto;
+}
+
+/* Prevent double animations */
+.motion-reduce-double {
+  animation-iteration-count: 1 !important;
+}
+
+/* GPU acceleration for better performance */
+.will-change-transform {
+  will-change: transform;
+  transform: translateZ(0);
+}

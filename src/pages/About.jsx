@@ -17,6 +17,7 @@ import {
 
 export default function About() {
   const [selectedTrinket, setSelectedTrinket] = useState(null);
+  const [hoveredTrinket, setHoveredTrinket] = useState(null);
   const [page, setPage] = useState('intro');//options: intro, bag_play
   const containerRef = useRef(null);
   
@@ -28,7 +29,7 @@ export default function About() {
     {
       id: 1,
       image: Coffee, // Top left
-      description: "i'm super into visiting cafes all around town!",
+      description: "i'm a huge cafe lover and i'm always looking to explore new places in new cities :)",
       position: { x: "30%", y: "20%" }
     },
     {
@@ -46,7 +47,7 @@ export default function About() {
     {
       id: 4,
       image: PaperBag, // Middle left
-      description: "if you've made it here, check out some of my projects in my portfolio showcase!",
+      description: "I'm the event lead for UW/UX, Waterloo's largest UI/UX community, and a Software Developer for UW Blueprint - building tech for non profits.",
       position: { x: "20%", y: "45%" }
     },
     {
@@ -58,13 +59,13 @@ export default function About() {
     {
       id: 6,
       image: Files, // Bottom left
-      description: "i'm currently a 1B systems design engineering student at the university of waterloo!",
+      description: "i'm currently a 2A systems design engineering student at the university of waterloo!",
       position: { x: "20%", y: "70%" }
     },
     {
       id: 7,
       image: Bag, // Bottom center-left
-      description: "some places i've worked at include sunlife, UW reality labs and frontop engineering! ",
+      description: "My past internships include Software Engineering at Sun Life's GenAI team, data engineering for TTC/Metrolinx projects at Frontop Engineering! ",
       position: { x: "40%", y: "75%" }
     },
     {
@@ -115,11 +116,25 @@ export default function About() {
               transform: 'translate(-50%, -50%)' // Center the element on its position
             }}
             onClick={() => openModal(trinket)}
+            onMouseEnter={() => setHoveredTrinket(trinket)}
+            onMouseLeave={() => setHoveredTrinket(null)}
           >
             <Trinket
               image={trinket.image}
               description={trinket.description}
             />
+            
+            {/* Hover Tooltip */}
+            {hoveredTrinket && hoveredTrinket.id === trinket.id && (
+              <div className="absolute z-10 bg-white border border-gray-300 rounded-lg shadow-lg p-3 max-w-xs min-w-48 text-sm text-gray-800 pointer-events-none transform -translate-x-1/2 -translate-y-full -mt-2 left-1/2 top-0">
+                <div className="font-medium mb-1 text-center">Preview:</div>
+                <div className="text-xs text-center leading-relaxed">
+                  {trinket.description}
+                </div>
+                {/* Small arrow pointing down */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-gray-300"></div>
+              </div>
+            )}
           </div>
         ))}
       </div>

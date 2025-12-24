@@ -2,12 +2,12 @@
 
 export default function PolaroidCard({ image, title, company, date, tools }) {
   return (
-    <div className="bg-white border border-black rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 will-change-transform">
+    <div className="bg-white border border-black rounded-lg overflow-hidden shadow-lg">
       <div className="h-48 overflow-hidden">
         <img 
       src={image} 
       alt={typeof title === 'string' ? title : 'Project'} 
-      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-300 will-change-transform"
+      className="w-full h-full object-cover"
         />
       </div>
       <div className="p-6">

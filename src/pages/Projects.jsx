@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import PolaroidCard from '../components/PolaroidCard';
 import PolaroidModal from '../components/PolaroidModal';
@@ -12,8 +12,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
   const typewriterRef = useRef(null);
 
-  // Project data with descriptions, GitHub links, and YouTube video
-  const projects = [
+  // Memoize projects array to prevent re-creation on each render
+  const projects = useMemo(() => [
     
     {
       id: 1,
@@ -93,18 +93,16 @@ export default function Projects() {
       githubUrl: "https://github.com/stse3/my-portfolio",
       liveUrl: "https://sherrytse.com"
     }
-  ];
+  ], []);
 
-  // Open modal with project details
-  const openModal = (project) => {
+  // Memoize handlers to prevent unnecessary re-renders
+  const openModal = useCallback((project) => {
     setSelectedProject(project);
-    console.log("Opening project:", project); // Debugging
-  };
+  }, []);
 
-  // Close modal
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setSelectedProject(null);
-  };
+  }, []);
 
   return (
     <div className="py-12 px-6">
@@ -145,17 +143,25 @@ export default function Projects() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
         {projects.map((project, index) => (
           <motion.div 
-            key={project.id}
+            key={`project-${project.id}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
+            transition={{ 
+              duration: 0.4, 
+              delay: index * 0.08,
+              ease: "easeOut"
+            }}
+            whileHover={{ 
+              y: -6, 
+              transition: { duration: 0.15, ease: "easeOut" }
+            }}
             onClick={() => openModal(project)} 
-            className="cursor-pointer"
+            className="cursor-pointer will-change-transform"
+            style={{ willChange: 'transform' }}
           >
             <PolaroidCard
               image={project.image}
-              title={project.id === 1 ? <div><p>Real Time Seismic Vibration Data Web App</p></div> : project.title}
+              title={project.title}
               company={project.company}
               date={project.date}
               tools={project.tools}
@@ -172,9 +178,7 @@ export default function Projects() {
           media={selectedProject.image}
           mediaType={selectedProject.mediaType || "image"}
           youtubeEmbedUrl={selectedProject.youtubeEmbedUrl}
-          title={typeof selectedProject.title === 'string' 
-            ? selectedProject.title 
-            : "Real Time Seismic Vibration Data Web App"}
+          title={selectedProject.title}
           description={selectedProject.description}
           company={selectedProject.company}
           date={selectedProject.date}
