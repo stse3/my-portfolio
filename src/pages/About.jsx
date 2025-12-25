@@ -91,10 +91,9 @@ export default function About() {
 
   return (
     <div className="w-full text-center">
-      <div className="">
       <div
         ref={containerRef}
-        className="relative h-[500px] w-[70%] mx-auto border border-gray-300 rounded-3xl p-6 mb-6" 
+        className="relative h-[500px] w-[90%] mx-auto"
       >
         {/* Central Text */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
@@ -123,37 +122,32 @@ export default function About() {
             />
           </div>
         ))}
-      
       </div>
-      <div className="text-center mt-4">
-        <div className="text-xs text-gray-500">
+      <div className="text-xs text-gray-500">
           <Typewriter
-            onInit={(typewriter) => {
-              typewriter
-                .typeString("click the objects to get to know me!")
-                .callFunction(() => {
-                  // Use requestAnimationFrame for smoother cursor removal
-                  requestAnimationFrame(() => {
-                    const cursor = document.querySelector('.Typewriter__cursor');
-                    if (cursor) {
-                      cursor.style.transition = 'opacity 0.3s ease';
-                      cursor.style.opacity = '0';
-                    }
-                  });
-                })
-                .start();
-            }}
-            options={{
-              delay: 50,
-              loop: false,
-              cursor: '|',
-            }}
-          />
-        </div>
-      </div>
+        onInit={(typewriter) => {
+            typewriter
+            .typeString("click the objects to get to know me!")
+            .callFunction(() => {
+                // Use requestAnimationFrame for smoother cursor removal
+                requestAnimationFrame(() => {
+                const cursor = document.querySelector('.Typewriter__cursor');
+                if (cursor) {
+                    cursor.style.transition = 'opacity 0.3s ease';
+                    cursor.style.opacity = '0';
+                }
+                });
+            })
+            .start();
+        }}
+        options={{
+            delay: 50,
+            loop: false,
+            cursor: '|',
+        }}
+        />
       </div>
      
-      
 
    
       
