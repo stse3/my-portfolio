@@ -76,6 +76,9 @@ export default function Home() {
               You'll often find me taking endless photos of cool buildings and sceneries, exploring the coziest cafés in Toronto, or crocheting in my bedroom{" "}
                 <Emoji name="love letter" width={20} className="inline" />
               </p>
+              <p className = "text-md"> 
+                Prev SWE @ PlayStation, Sun Life, and Frontop Engineering!
+              </p>
               <div className="flex flex-row gap-1">
                 <p>
                   check out my projects,

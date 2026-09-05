@@ -46,7 +46,7 @@ export default function About() {
     {
       id: 4,
       image: PaperBag, // Middle left
-      description: "I'm the event lead for UW/UX, Waterloo's largest UI/UX community, and a Software Developer for UW Blueprint - building tech for non profits.",
+      description: "I'm a product manager for UW Blueprint - building tech for non profits.",
       position: { x: "20%", y: "45%" }
     },
     {
@@ -58,13 +58,13 @@ export default function About() {
     {
       id: 6,
       image: Files, // Bottom left
-      description: "i'm currently a 2A systems design engineering student at the university of waterloo!",
+      description: "i'm currently a 2B systems design engineering student at the university of waterloo!",
       position: { x: "20%", y: "70%" }
     },
     {
       id: 7,
       image: Bag, // Bottom center-left
-      description: "My past internships include Software Engineering at Sun Life's GenAI team, data engineering for TTC/Metrolinx projects at Frontop Engineering! ",
+      description: "My past internships include Software Engineering at PlayStation and Sun Life's GenAI team ",
       position: { x: "40%", y: "75%" }
     },
     {
