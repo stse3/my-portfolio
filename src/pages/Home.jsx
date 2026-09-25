@@ -72,7 +72,7 @@ const listVariants = {
 export default function Home() {
 
   return (
-    <div className="flex flex-col items-center justify-center px-6 py-10 md:px-20 md:py-16">
+    <div className="flex flex-col items-center justify-center px-6 py-10 md:py-16">
       <div className="flex flex-col md:flex-row gap-12 md:gap-20 items-center max-w-[1000px] w-full">
 
         {/* Text Section */}
