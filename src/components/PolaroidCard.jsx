@@ -1,37 +1,18 @@
-
-
-export default function PolaroidCard({ image, title, company, date, tools }) {
+export default function PolaroidCard({ image, title, company, date, aspect = "aspect-[4/3]" }) {
   return (
-    <div className="bg-white border border-black rounded-lg overflow-hidden shadow-lg">
-      <div className="h-48 overflow-hidden">
-        <img 
-      src={image} 
-      alt={typeof title === 'string' ? title : 'Project'} 
-      className="w-full h-full object-cover"
+    <div className="flex flex-col gap-2">
+      <div className={`relative w-full ${aspect} border border-black/10 overflow-hidden`}>
+        <img
+          src={image}
+          alt={typeof title === 'string' ? title : 'Project'}
+          className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
         />
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 ease-in-out group-hover:bg-black/20" />
       </div>
-      <div className="p-6">
-        <div className="font-medium text-lg mb-2">
-      {title}
-        </div>
-        <div className="flex justify-between items-center mb-4">
-      <p className="text-sm text-gray-600">{company}</p>
-      <p className="text-sm text-gray-500">{date}</p>
-        </div>
-        <div className="mt-4">
-      <div className="flex flex-wrap gap-2">
-        {tools.map((tool, index) => (
-          <span 
-        key={index} 
-        className="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full"
-          >
-        {tool}
-          </span>
-        ))}
-      </div>
-        </div>
+      <div className="flex flex-col lg:flex-row lg:items-baseline lg:justify-between gap-0.5">
+        <h3 className="text-[17px] font-medium text-black">{title}</h3>
+        <p className="text-[14px] text-gray-500 whitespace-nowrap">{company} · {date}</p>
       </div>
     </div>
-      );
-
+  );
 }

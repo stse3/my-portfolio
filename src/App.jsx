@@ -4,6 +4,7 @@ import Home from './pages/Home.jsx';
 import Contact from './pages/Contact.jsx';
 import About from './pages/About.jsx';
 import Projects from './pages/Projects.jsx';
+import ProjectDetail from './pages/ProjectDetail.jsx';
 import Layout from './components/Layout.jsx';
 
 export default function App (){
@@ -16,6 +17,7 @@ export default function App (){
                     <Route path="/" element={ <Home />}></Route>
                     <Route path='/about' element={<About/>}></Route>
                     <Route path='/projects' element={<Projects/>}></Route>
+                    <Route path='/projects/:slug' element={<ProjectDetail/>}></Route>
                     <Route path='/contact' element={<Contact/>}></Route>
 
                 </Route>

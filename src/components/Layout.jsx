@@ -1,11 +1,12 @@
 import Header from './Header';
 import Footer from './Footer';
-import { Outlet, useLocation } from 'react-router-dom';
+import { useOutlet, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
 export default function Layout() {
   const location = useLocation();
-  
+  const element = useOutlet();
+
   // Animation variants
   const pageVariants = {
     initial: {
@@ -37,7 +38,7 @@ export default function Layout() {
       {/* Main Container */}
       <div className="flex flex-col items-center flex-grow w-full">
         {/* Content Container */}
-        <div className="w-full max-w-[1000px] min-h-[600px] bg-white border border-gray-300 rounded-3xl overflow-hidden flex flex-col mb-10">
+        <div className="w-full max-w-[1000px] bg-white overflow-hidden flex flex-col mb-10">
           <Header />
           <main className="flex-1 overflow-hidden">
             <AnimatePresence mode="wait">
@@ -49,7 +50,7 @@ export default function Layout() {
                 variants={pageVariants}
                 className="h-full"
               >
-                <Outlet />
+                {element}
               </motion.div>
             </AnimatePresence>
           </main>
