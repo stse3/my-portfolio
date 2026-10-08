@@ -115,7 +115,7 @@ export default function Home() {
               animate="show"
             >
               <motion.p variants={itemVariants}>
-                i’m a systems design engineering student at the univeristy of waterloo{" "}
+                i’m a systems design engineering student at the university of waterloo{" "}
                 <Emoji name="construction worker" width={20} className="inline" />
               </motion.p>
               <motion.p variants={itemVariants}>
